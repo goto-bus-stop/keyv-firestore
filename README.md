@@ -23,7 +23,7 @@ npm install keyv-firestore
 
 ## Usage
 
-`keyv-firestore` uses a collection where the document IDs are keys, and the documents have a string field `value`.
+`keyv-firestore` uses nested collections for namespaces and keys. A root collection contains keys for each namespace, and each namespace key contains a single collection that holds key/value pairs. The path to a specific key is `root-collection/namespace/namespace/key`.
 
 ```js
 var Keyv = require('keyv')
@@ -33,7 +33,7 @@ const keyv = new Keyv({
   store: KeyvFirestore,
   // REQUIRED: the project id to use
   projectId: 'my-firebase-project',
-  // REQUIRED: the collection to store things in
+  // REQUIRED: the root collection to store things in
   collection: 'firestore-db-collection'
 })
 ```
@@ -48,6 +48,10 @@ const keyv = new Keyv({
   credentials: require('./path/to/google-credentials.json')
 })
 ```
+
+## Tests
+
+To be able to run tests locally, put a `.google-credentials.json` file in this repository's root directory.
 
 ## License
 
