@@ -9,7 +9,7 @@
   "devDependencies": {
     "@keyv/test-suite": "^1.6.11",
     "ava": "^3.5.1",
-    "keyv": "^3.1.0",
+    "keyv": "^4.0.0",
     "standard": "^14.3.3"
   },
   "homepage": "https://github.com/goto-bus-stop/keyv-firestore",
