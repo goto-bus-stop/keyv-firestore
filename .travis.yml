@@ -7,3 +7,9 @@ before_install:
   -in .google-credentials.json.enc -out .google-credentials.json -d
 env:
 - GOOGLE_APPLICATION_CREDENTIALS=.google-credentials.json
+
+jobs:
+  include:
+    - name: Test with Keyv v3
+      node_js: lts/*
+      before_script: npm install --no-save keyv@3
