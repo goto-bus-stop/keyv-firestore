@@ -10,7 +10,7 @@ Firebase Cloud Firestore backend for [Keyv](https://github.com/lukechilds/keyv),
 
 [npm-image]: https://img.shields.io/npm/v/keyv-firestore.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/keyv-firestore
-[travis-image]: https://img.shields.io/travis/com/goto-bus-stop/keyv-firestore/master.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/com/goto-bus-stop/keyv-firestore/default.svg?style=flat-square
 [travis-url]: https://travis-ci.com/goto-bus-stop/keyv-firestore
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
