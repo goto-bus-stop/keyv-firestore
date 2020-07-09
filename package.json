@@ -32,6 +32,6 @@
     "test": "standard && ava"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^3.7.1"
+    "@google-cloud/firestore": "^4.1.0"
   }
 }
