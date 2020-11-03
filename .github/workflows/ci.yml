@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        keyv: ['3.x', '4.x']
+        node: ['12.x', '14.x', '15.x']
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install Node.js ${{matrix.node}}
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{matrix.node}}
+      - name: Configure Firestore credentials
+        run: |
+          echo "$S" > .google-credentials.json
+        env:
+          S: ${{secrets.FIRESTORE_CREDS}}
+      - name: Install dependencies
+        run: npm install
+      - name: Install Keyv ${{matrix.keyv}}
+        run: npm install keyv@${{matrix.keyv}}
+      - name: Run tests
+        run: npm run test:ava
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Install Node.js 14.x
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.x'
+      - name: Run standard
+        run: npm run test:lint

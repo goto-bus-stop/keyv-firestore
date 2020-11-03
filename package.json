@@ -29,6 +29,8 @@
     "url": "https://github.com/goto-bus-stop/keyv-firestore.git"
   },
   "scripts": {
+    "test:ava": "ava",
+    "test:lint": "standard",
     "test": "standard && ava"
   },
   "dependencies": {
