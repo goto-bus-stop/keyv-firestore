@@ -1,0 +1,27 @@
+name: CI
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        keyv: ['3.x', '4.x']
+        node: ['12.x', '14.x', '15.x']
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install Node.js ${{matrix.node}}
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{matrix.node}}
+      - name: Configure Firestore credentials
+        run: |
+          echo "$S" > .google-credentials.json
+        env:
+          S: ${{secrets.FIRESTORE_CREDS}}
+      - name: Install dependencies
+        run: npm install
+      - name: Install Keyv ${{matrix.keyv}}
+      - name: Run tests
+        run: npm test
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
