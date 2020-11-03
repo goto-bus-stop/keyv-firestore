@@ -6,6 +6,7 @@ on:
 
 jobs:
   test:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         keyv: ['3.x', '4.x']
@@ -31,6 +32,7 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
   lint:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
