@@ -8,6 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       matrix:
         keyv: ['3.x', '4.x']
         node: ['12.x', '14.x', '15.x']
