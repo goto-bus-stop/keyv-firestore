@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Install Keyv ${{matrix.keyv}}
+        run: npm install keyv@${{matrix.keyv}}
       - name: Run tests
         run: npm run test:ava
         env:
