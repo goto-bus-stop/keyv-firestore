@@ -1,7 +1,7 @@
 {
   "name": "keyv-firestore",
   "description": "Firebase Cloud Firestore backend for Keyv, the simple persistent key-value storage module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/goto-bus-stop/keyv-firestore/issues"
