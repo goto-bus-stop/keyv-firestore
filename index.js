@@ -7,7 +7,6 @@ class KeyvFirestore {
     credentials,
     collection
   }) {
-    assert.equal(typeof projectId, 'string')
     assert.equal(typeof collection, 'string')
 
     this._store = new Firestore({ projectId, credentials })
