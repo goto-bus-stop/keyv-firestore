@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         keyv: ['3.x', '4.x']
-        node: ['12.x', '14.x', '15.x']
+        node: ['12.x', '14.x', '16.x', '18.x']
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
