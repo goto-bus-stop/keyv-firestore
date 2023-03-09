@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        keyv: ['3.x', '4.x']
+        pkg: [{ keyv: '3.x', suite: '=1.6.11' }, { keyv: '4.x', suite: '1.x' }]
         node: ['12.x', '14.x', '16.x', '18.x']
     steps:
       - name: Checkout sources
@@ -26,8 +26,8 @@ jobs:
           S: ${{secrets.FIRESTORE_CREDS}}
       - name: Install dependencies
         run: npm install
-      - name: Install Keyv ${{matrix.keyv}}
-        run: npm install keyv@${{matrix.keyv}}
+      - name: Install Keyv ${{matrix.pkg.keyv}}
+        run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}}
       - name: Run tests
         run: npm run test:ava
         env:
