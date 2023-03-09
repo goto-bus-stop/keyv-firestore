@@ -1,3 +1,5 @@
+'use strict'
+
 const assert = require('assert').strict
 const Firestore = require('@google-cloud/firestore')
 

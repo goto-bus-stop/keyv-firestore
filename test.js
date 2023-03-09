@@ -1,3 +1,5 @@
+'use strict'
+
 const test = require('ava')
 const testSuite = require('@keyv/test-suite').default
 const Keyv = require('keyv')
