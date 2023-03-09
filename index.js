@@ -2,11 +2,14 @@ const assert = require('assert').strict
 const Firestore = require('@google-cloud/firestore')
 
 class KeyvFirestore {
-  constructor ({
-    projectId,
-    credentials,
-    collection
-  }) {
+  constructor (options) {
+    // Required by @keyv/test-suite…
+    this.opts = options
+    const {
+      projectId,
+      credentials,
+      collection
+    } = options
     assert.equal(typeof collection, 'string')
 
     this._store = new Firestore({ projectId, credentials })
