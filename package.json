@@ -10,7 +10,7 @@
     "@keyv/test-suite": "^1.6.11",
     "ava": "^5.2.0",
     "keyv": "^4.0.0",
-    "standard": "^16.0.1"
+    "standard": "^17.0.0"
   },
   "homepage": "https://github.com/goto-bus-stop/keyv-firestore",
   "keywords": [
