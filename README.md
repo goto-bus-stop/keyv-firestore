@@ -30,11 +30,12 @@ var Keyv = require('keyv')
 var KeyvFirestore = require('keyv-firestore')
 
 const keyv = new Keyv({
-  store: KeyvFirestore,
-  // REQUIRED: the project id to use
-  projectId: 'my-firebase-project',
-  // REQUIRED: the root collection to store things in
-  collection: 'firestore-db-collection'
+  store: new KeyvFirestore({
+    // REQUIRED: the project id to use
+    projectId: 'my-firebase-project',
+    // REQUIRED: the root collection to store things in
+    collection: 'firestore-db-collection'
+  })
 })
 ```
 
@@ -42,10 +43,11 @@ You can set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to configu
 
 ```js
 const keyv = new Keyv({
-  store: KeyvFirestore,
-  projectId: 'my-firebase-project',
-  collection: 'firestore-db-collection',
-  credentials: require('./path/to/google-credentials.json')
+  store: new KeyvFirestore({
+    projectId: 'my-firebase-project',
+    collection: 'firestore-db-collection',
+    credentials: require('./path/to/google-credentials.json')
+  })
 })
 ```
 
