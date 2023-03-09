@@ -5,13 +5,13 @@ Firebase Cloud Firestore backend for [Keyv](https://github.com/lukechilds/keyv),
 [Install](#install) - [Usage](#usage) - [License: Apache-2.0](#license)
 
 [![npm][npm-image]][npm-url]
-[![travis][travis-image]][travis-url]
+[![ci][actions-image]][actions-url]
 [![standard][standard-image]][standard-url]
 
 [npm-image]: https://img.shields.io/npm/v/keyv-firestore.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/keyv-firestore
-[travis-image]: https://img.shields.io/travis/com/goto-bus-stop/keyv-firestore/default.svg?style=flat-square
-[travis-url]: https://travis-ci.com/goto-bus-stop/keyv-firestore
+[actions-image]: https://img.shields.io/github/actions/workflow/status/goto-bus-stop/keyv-firestore/ci.yml?branch=default&style=flat-square
+[actions-url]: https://github.com/goto-bus-stop/keyv-firestore/actions
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 
