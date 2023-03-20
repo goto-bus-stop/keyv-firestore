@@ -31,7 +31,7 @@ var KeyvFirestore = require('keyv-firestore')
 
 const keyv = new Keyv({
   store: new KeyvFirestore({
-    // REQUIRED: the project id to use
+    // the project id to use
     projectId: 'my-firebase-project',
     // REQUIRED: the root collection to store things in
     collection: 'firestore-db-collection'
