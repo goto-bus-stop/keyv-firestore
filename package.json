@@ -37,6 +37,6 @@
     "keyv": "^3.0.0 || ^4.0.0"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^6.5.0"
+    "@google-cloud/firestore": "^7.1.0"
   }
 }
