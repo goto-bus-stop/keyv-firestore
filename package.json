@@ -29,7 +29,7 @@
     "url": "https://github.com/goto-bus-stop/keyv-firestore.git"
   },
   "scripts": {
-    "test:ava": "ava",
+    "test:ava": "ava test.js",
     "test:vitest": "vitest run",
     "test:lint": "standard",
     "test": "standard && ava"
