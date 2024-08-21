@@ -10,8 +10,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # When updating, also update README.md Compatibility
         pkg: [{ keyv: '3.x', suite: '=1.6.11' }, { keyv: '4.x', suite: '1.x' }]
         node: ['14.x', '16.x', '18.x', '20.x', '22.x']
+        include:
+          - pkg: { keyv: '5.x', suite: '2.x' }
+            node: '20.x'
+            deps: 'vitest@2.x'
+          - pkg: { keyv: '5.x', suite: '2.x' }
+            node: '22.x'
+            deps: 'vitest@2.x'
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -27,9 +35,15 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Install Keyv ${{matrix.pkg.keyv}}
-        run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}}
-      - name: Run tests
+        run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}} ${{matrix.deps}}
+      - name: Run tests (Ava)
         run: npm run test:ava
+        if: ${{!startsWith(matrix.pkg.suite, '2.')}}
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
+      - name: Run tests (Vitest)
+        run: npm run test:vitest
+        if: ${{startsWith(matrix.pkg.suite, '2.')}}
         env:
           GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
   lint:
