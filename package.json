@@ -30,6 +30,7 @@
   },
   "scripts": {
     "test:ava": "ava",
+    "test:vitest": "vitest",
     "test:lint": "standard",
     "test": "standard && ava"
   },

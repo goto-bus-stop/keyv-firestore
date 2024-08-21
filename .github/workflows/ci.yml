@@ -35,11 +35,15 @@ jobs:
         run: npm install
       - name: Install Keyv ${{matrix.pkg.keyv}}
         run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}} ${{matrix.deps}}
-      - name: Run tests
+      - name: Run tests (Ava)
         run: npm run test:ava
+        if: ${{!startsWith(matrix.pkg.suite, '2.')}}
         env:
-          KEYV_VERSION: ${{matrix.pkg.keyv}}
-          KEYV_SUITE_VERSION: ${{matrix.pkg.suite}}
+          GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
+      - name: Run tests (Vitest)
+        run: npm run test:vitest
+        if: ${{startsWith(matrix.pkg.suite, '2.')}}
+        env:
           GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
   lint:
     runs-on: ubuntu-latest
