@@ -22,4 +22,3 @@ testSuite(vitest, Keyv, () => new KeyvFirestore({
   projectId: 'uwave-demo',
   collection
 }))
-
