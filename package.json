@@ -30,7 +30,7 @@
   },
   "scripts": {
     "test:ava": "ava",
-    "test:vitest": "node test.vitest.mjs",
+    "test:vitest": "vitest run",
     "test:lint": "standard",
     "test": "standard && ava"
   },
