@@ -15,6 +15,10 @@ Firebase Cloud Firestore backend for [Keyv](https://github.com/lukechilds/keyv),
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 
+## Compatibility
+
+`keyv-firestore` is tested with Keyv v3, v4, and v5, on Node.js 14 and up.
+
 ## Install
 
 ```

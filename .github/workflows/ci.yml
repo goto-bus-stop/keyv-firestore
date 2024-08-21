@@ -10,6 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # When updating, also update README.md Compatibility
         pkg: [{ keyv: '3.x', suite: '=1.6.11' }, { keyv: '4.x', suite: '1.x' }]
         node: ['14.x', '16.x', '18.x', '20.x', '22.x']
         include:
