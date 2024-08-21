@@ -15,8 +15,10 @@ jobs:
         include:
           - pkg: { keyv: '5.x', suite: '2.x' }
             node: '20.x'
+            deps: 'vitest@2.x'
           - pkg: { keyv: '5.x', suite: '2.x' }
             node: '22.x'
+            deps: 'vitest@2.x'
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -32,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Install Keyv ${{matrix.pkg.keyv}}
-        run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}}
+        run: npm install keyv@${{matrix.pkg.keyv}} @keyv/test-suite@${{matrix.pkg.suite}} ${{matrix.deps}}
       - name: Run tests
         run: npm run test:ava
         env:
