@@ -12,7 +12,7 @@ test.before((t) => {
 let collection = 'keyv-firestore'
 // Use a unique-er collection name for concurrent CI runs
 if (process.env.GITHUB_ACTIONS) {
-  const keyvVersion = require('keyv/package.json').version
+  const keyvVersion = process.env.KEYV_VERSION
   const nodeVersion = process.version
   collection = `keyv-firestore-gh${process.env.GITHUB_RUN_ID}-${keyvVersion}-${nodeVersion}`
 }
