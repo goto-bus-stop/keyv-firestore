@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.0
+* Support `keyv` v5.
+
+`keyv-firestore` now supports `keyv` v3, v4, and v5.
+
 ## 2.0.0
 * **breaking:** Drop Node.js 12 support.
 * Add declarations for TypeScript users. Thanks [@kidonng](https://github.com/kidonng)!
