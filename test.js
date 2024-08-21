@@ -1,7 +1,7 @@
 'use strict'
 
-const keyvVersion = process.env.KEYV_VERSION
-const suiteVersion = process.env.KEYV_SUITE_VERSION
+const keyvVersion = process.env.KEYV_VERSION || '4.x'
+const suiteVersion = process.env.KEYV_SUITE_VERSION || '1.x'
 const nodeVersion = process.version
 
 // Test suite >= 2 use vitest instead of ava.

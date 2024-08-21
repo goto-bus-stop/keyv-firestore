@@ -39,6 +39,7 @@ jobs:
         run: npm run test:ava
         env:
           KEYV_VERSION: ${{matrix.pkg.keyv}}
+          KEYV_SUITE_VERSION: ${{matrix.pkg.suite}}
           GOOGLE_APPLICATION_CREDENTIALS: .google-credentials.json
   lint:
     runs-on: ubuntu-latest
