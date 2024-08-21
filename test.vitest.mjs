@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 import * as vitest from 'vitest'
 import testSuite from '@keyv/test-suite'
 import Keyv from 'keyv'
-import KeyvFirestore from '.'
+import KeyvFirestore from './index.js'
 
 const keyvVersion = JSON.parse(readFileSync(new URL('./node_modules/keyv/package.json', import.meta.url), 'utf8')).version
 const nodeVersion = process.version
