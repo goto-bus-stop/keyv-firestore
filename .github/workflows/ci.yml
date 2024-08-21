@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pkg: [{ keyv: '3.x', suite: '=1.6.11' }, { keyv: '4.x', suite: '1.x' }]
+        pkg: [{ keyv: '3.x', suite: '=1.6.11' }, { keyv: '4.x', suite: '1.x' }, { keyv: '5.x', suite: '2.x' }]
         node: ['14.x', '16.x', '18.x', '20.x', '22.x']
     steps:
       - name: Checkout sources
